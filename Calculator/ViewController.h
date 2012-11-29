@@ -9,5 +9,11 @@
 #import <UIKit/UIKit.h>
 
 @interface ViewController : UIViewController
+{
+    IBOutlet UISwitch *calculatorPower;
+    IBOutlet UITextField *calculatorScreen;
+}
 
+
+-(IBAction)onClick:(id)sender;
 @end

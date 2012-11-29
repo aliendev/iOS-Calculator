@@ -16,6 +16,8 @@
 
 - (void)viewDidLoad
 {
+    calculatorScreen.text = @"0";
+    calculatorPower.on = true;
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
 }
@@ -24,6 +26,11 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+-(IBAction)onClick:(id)sender
+{
+    
 }
 
 @end
