@@ -13,7 +13,7 @@ Michael Youngblood
 RESOURCES
 =========
 
-Dominic Chang - GitHub Repo: docchang/Calculator.iOS
+Dominic Chang docchang - GitHub Repo: docchang/Calculator.iOS
 https://github.com/docchang/Calculator.iOS
 
 Dominic used some ways to pass information from the buttons to the functions using (UIButton *)sender in place of (id)sender in which I wanted to impliment. 
