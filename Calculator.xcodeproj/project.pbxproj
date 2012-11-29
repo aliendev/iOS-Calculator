@@ -18,6 +18,7 @@
 		C1C3D54B1666E36C00ED6809 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C1C3D54A1666E36C00ED6809 /* Default-568h@2x.png */; };
 		C1C3D54E1666E36D00ED6809 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C1C3D54D1666E36D00ED6809 /* ViewController.m */; };
 		C1C3D5511666E36D00ED6809 /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C1C3D54F1666E36D00ED6809 /* ViewController.xib */; };
+		C1C3D5581666E8F300ED6809 /* infoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C1C3D5571666E8F300ED6809 /* infoViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +38,7 @@
 		C1C3D54C1666E36C00ED6809 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		C1C3D54D1666E36D00ED6809 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		C1C3D5501666E36D00ED6809 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ViewController.xib; sourceTree = "<group>"; };
+		C1C3D5571666E8F300ED6809 /* infoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = infoViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +90,7 @@
 				C1C3D54C1666E36C00ED6809 /* ViewController.h */,
 				C1C3D54D1666E36D00ED6809 /* ViewController.m */,
 				C1C3D54F1666E36D00ED6809 /* ViewController.xib */,
+				C1C3D5571666E8F300ED6809 /* infoViewController.xib */,
 				C1C3D53B1666E36A00ED6809 /* Supporting Files */,
 			);
 			path = Calculator;
@@ -163,6 +166,7 @@
 				C1C3D5491666E36A00ED6809 /* Default@2x.png in Resources */,
 				C1C3D54B1666E36C00ED6809 /* Default-568h@2x.png in Resources */,
 				C1C3D5511666E36D00ED6809 /* ViewController.xib in Resources */,
+				C1C3D5581666E8F300ED6809 /* infoViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
