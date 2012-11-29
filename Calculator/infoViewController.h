@@ -10,4 +10,6 @@
 
 @interface infoViewController : UIViewController
 
+-(IBAction)onClose:(id)sender;
+
 @end

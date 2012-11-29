@@ -12,6 +12,9 @@
 {
     IBOutlet UISwitch *calculatorPower;
     IBOutlet UITextField *calculatorScreen;
+    IBOutlet UIButton *infoScreenButton;
+    
+    int buttonIndex;
 }
 
 
