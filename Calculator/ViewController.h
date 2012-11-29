@@ -1,4 +1,4 @@
-//
+\//
 //  ViewController.h
 //  Calculator
 //
@@ -13,10 +13,20 @@
     IBOutlet UISwitch *calculatorPower;
     IBOutlet UITextField *calculatorScreen;
     IBOutlet UIButton *infoScreenButton;
-    
+
     int buttonIndex;
 }
 
-
+// Anything that doesn't fit in a specific IBAction
 -(IBAction)onClick:(id)sender;
+
+// Numbers of the calculator pressed
+-(IBAction)numberPressed:(UIButton *)sender;
+
+// Functions such as clear, addition, and equals
+-(IBAction)functionPressed:(UIButton *)sender;
+
+// power switch has been either turned on or off
+-(IBAction)powerSwitched:(UISwitch *)sender;
+
 @end

@@ -19,6 +19,7 @@
 		C1C3D54E1666E36D00ED6809 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C1C3D54D1666E36D00ED6809 /* ViewController.m */; };
 		C1C3D5511666E36D00ED6809 /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C1C3D54F1666E36D00ED6809 /* ViewController.xib */; };
 		C1C3D5581666E8F300ED6809 /* infoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C1C3D5571666E8F300ED6809 /* infoViewController.xib */; };
+		C1DB823F1667A608009C48FA /* infoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C1DB823E1667A608009C48FA /* infoViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +40,8 @@
 		C1C3D54D1666E36D00ED6809 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		C1C3D5501666E36D00ED6809 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ViewController.xib; sourceTree = "<group>"; };
 		C1C3D5571666E8F300ED6809 /* infoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = infoViewController.xib; sourceTree = "<group>"; };
+		C1DB823D1667A607009C48FA /* infoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = infoViewController.h; sourceTree = "<group>"; };
+		C1DB823E1667A608009C48FA /* infoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = infoViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,11 +90,13 @@
 			children = (
 				C1C3D5431666E36A00ED6809 /* AppDelegate.h */,
 				C1C3D5441666E36A00ED6809 /* AppDelegate.m */,
+				C1C3D53B1666E36A00ED6809 /* Supporting Files */,
 				C1C3D54C1666E36C00ED6809 /* ViewController.h */,
 				C1C3D54D1666E36D00ED6809 /* ViewController.m */,
 				C1C3D54F1666E36D00ED6809 /* ViewController.xib */,
+				C1DB823D1667A607009C48FA /* infoViewController.h */,
+				C1DB823E1667A608009C48FA /* infoViewController.m */,
 				C1C3D5571666E8F300ED6809 /* infoViewController.xib */,
-				C1C3D53B1666E36A00ED6809 /* Supporting Files */,
 			);
 			path = Calculator;
 			sourceTree = "<group>";
@@ -180,6 +185,7 @@
 				C1C3D5411666E36A00ED6809 /* main.m in Sources */,
 				C1C3D5451666E36A00ED6809 /* AppDelegate.m in Sources */,
 				C1C3D54E1666E36D00ED6809 /* ViewController.m in Sources */,
+				C1DB823F1667A608009C48FA /* infoViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -294,6 +300,7 @@
 				C1C3D5561666E36D00ED6809 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
