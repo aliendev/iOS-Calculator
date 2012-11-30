@@ -1,4 +1,4 @@
-\//
+//
 //  ViewController.h
 //  Calculator
 //
@@ -15,6 +15,9 @@
     IBOutlet UIButton *infoScreenButton;
 
     int buttonIndex;
+    int numberOne;
+    int numberTwo;
+    bool stillTypeing;
 }
 
 // Anything that doesn't fit in a specific IBAction
@@ -28,5 +31,10 @@
 
 // power switch has been either turned on or off
 -(IBAction)powerSwitched:(UISwitch *)sender;
+
+// background color switcher
+-(IBAction)colorSwitcher:(UISegmentedControl *)sender;
+
+
 
 @end

@@ -8,6 +8,7 @@
 
 #import "ViewController.h"
 #import "infoViewController.h"
+
 @interface ViewController ()
 
 @end
@@ -16,8 +17,12 @@
 
 - (void)viewDidLoad
 {
+    calculatorScreen.enabled = FALSE;
     calculatorScreen.text = @"0";
     calculatorPower.on = TRUE;
+    numberOne = 0;
+    numberTwo = 0;
+    stillTypeing = FALSE;
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
 }
@@ -57,21 +62,28 @@
 -(IBAction)numberPressed:(UIButton *)sender
 {
     // Get the number placed on the button
-    NSString *number = sender.titleLable.text;
-
+    NSString *number = sender.titleLabel.text;
+    NSLog(@"%@", number);
     // Prevent leading zeros
     if ([@"0" isEqual:number] && [@"0" isEqual:calculatorScreen.text])
     // if the 0 number is pressed and the display only reads 0
     {
-        // do nothing
-        return nil;
+        // do nothing and continue not typing
+        stillTypeing = FALSE;
     }
-
-    // display or append the number on the calculator screen
-    calculatorScreen.text = [calculatorScreen.text stringByAppendingString:number];
-
-    // remove original trailing 0
-    // code this
+    // if the number on the screen is 0
+    else if (stillTypeing == FALSE)
+    {
+        // replace screentext with pressed number
+        calculatorScreen.text = number;
+        stillTypeing = TRUE;
+    }
+    else
+    {
+        // display or append the number on the calculator screen
+        calculatorScreen.text = [calculatorScreen.text stringByAppendingString:number];
+        stillTypeing = TRUE;
+    }
 }
 
 
@@ -80,26 +92,101 @@
 {
     // Get the function displayed on the button
     NSString *function = sender.titleLabel.text;
-
-    // make first number variable
-
+    NSLog(@"%@", function);
+    
     // if + was pressed, get value of screen and add it to the variable first number
-    // if = was pressed add first number to second number and display answer to screen
+    if ([function isEqualToString:@"+"])
+    {
 
-    // possible function addition if time insists
-    // if + was pressed, display first number in screen until second number is being typed.
+        numberTwo = [calculatorScreen.text intValue];
+        numberOne = (numberOne + numberTwo);
+        NSString *theAnswerString = [[NSString alloc] initWithFormat:@"%d", numberOne];
+        calculatorScreen.text = [[NSString alloc] initWithString:theAnswerString];
+        stillTypeing = FALSE;
+
+    }
+    else if ([function isEqualToString:@"="])
+    {
+        // if = was pressed add first number to second number and display answer to screen
+        numberTwo = [calculatorScreen.text intValue];
+        numberOne = (numberOne + numberTwo);
+        NSString *theAnswerString = [[NSString alloc] initWithFormat:@"%d", numberOne];
+        calculatorScreen.text = [[NSString alloc] initWithString:theAnswerString];
+        numberOne = 0;
+        numberTwo = 0;
+        stillTypeing = FALSE;
+    }
+    else if ([function isEqualToString:@"Clear"])
+    {
+        numberOne = 0;
+        numberTwo = 0;
+        NSString *theAnswerString = [[NSString alloc] initWithFormat:@"%d", numberOne];
+        calculatorScreen.text = [[NSString alloc] initWithString:theAnswerString];
+        stillTypeing = FALSE;        
+    }
+    
 }
 
 
 // power switch has been either turned on or off
--(IBAction)powerSwitched:(UISwitch *)sender
+-(IBAction)powerSwitched:(id)sender
 {
     // Get the value being switched to (on/off)
-    NSString *power = sender.titleLabel.text;
+    UISwitch *powerSwitch = (UISwitch*)sender;
+    if (powerSwitch != nil)
+    {
+        if (powerSwitch.on == FALSE)
+        {
+            // when turning power off, disable all buttons except for power and make screen tint gray
+            NSLog(@"Powering off");
+            calculatorScreen.text = @"Powering Off";
+            for (UIButton *allButtons in self.view.subviews)
+            {
+                allButtons.enabled = FALSE;
+            }
+            calculatorScreen.text = @"Powered Off";
+            self.view.backgroundColor = [UIColor darkGrayColor];
+            powerSwitch.enabled = TRUE;
+        }
+        else if (powerSwitch.on == TRUE)
+        {
+            // when turning power on, enable all buttons and clear first number, second number and display 0 to screen
+            NSLog(@"Powering on");            
+            calculatorScreen.text = @"Powering On";
+            for (UIButton *allButtons in self.view.subviews)
+            {
+                allButtons.enabled = TRUE;
+            }
+            numberOne = 0;
+            numberTwo = 0;
+            stillTypeing = FALSE;
+            self.view.backgroundColor = [UIColor lightGrayColor];
+            calculatorScreen.text = @"0";
+        }
+    }
 
-    // when turning power off, disable all buttons except for power and make screen tint gray
+}
 
-    // when turning power on, enable all buttons and clear first number, second number and display 0 to screen
+-(IBAction)colorSwitcher:(UISegmentedControl *)sender
+{
+    UISegmentedControl *colorChanger = (UISegmentedControl*)sender;
+    if (colorChanger != nil)
+    {
+        int colorSelectorIndex = colorChanger.selectedSegmentIndex;
+        NSLog(@"%d", colorSelectorIndex);
+        if(colorSelectorIndex == 0)
+        {
+            self.view.backgroundColor = [UIColor whiteColor];
+        }
+        else if (colorSelectorIndex == 1)
+        {
+            self.view.backgroundColor = [UIColor blueColor];
+        }
+        else if (colorSelectorIndex == 2)
+        {
+            self.view.backgroundColor = [UIColor greenColor];
+        };
+    }
 }
 
 
