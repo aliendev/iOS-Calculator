@@ -17,13 +17,20 @@
 
 - (void)viewDidLoad
 {
+    // disable the ability to select and type in the calculatorScreen
     calculatorScreen.enabled = FALSE;
+    // set the screen to 0
     calculatorScreen.text = @"0";
+    // default upon open is powered on
     calculatorPower.on = TRUE;
 
+    // global numbers for calcultor memory is 0's
     numberOne = 0;
     numberTwo = 0;
+    
+    // user hasn't started typing yet
     stillTypeing = FALSE;
+    
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
 }
@@ -38,19 +45,27 @@
 // Anything that doesn't fit in a specific IBAction
 -(IBAction)onClick:(id)sender
 {
+    // get information about the button pressed
     UIButton *button = (UIButton*)sender;
+    
+    // if the button is in fact there
     if(button != nil)
     {
+        
+        // if the button's tag is 42 (the info button)
         if (button.tag == 42)
         {
+            // setup the infoScreen view
             infoViewController *infoScreen = [[infoViewController alloc] initWithNibName:@"infoViewController" bundle:nil];
             if (infoScreen != nil)
             {
+                // present the infoScreenView to screen
                 [self presentViewController:infoScreen animated:TRUE completion:nil];
             }
         }
         else
         {
+            // if nothing above, log the button tag so i can make a function for it
             NSLog(@"%d", button.tag);
         }
     }
