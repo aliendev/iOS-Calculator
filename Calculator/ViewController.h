@@ -35,7 +35,6 @@
 // background color switcher
 -(IBAction)colorSwitcher:(UISegmentedControl *)sender;
 
-// Clear Vars
--(void)clearCalculator;
+-(NSString*)addNumbers:(NSInteger)one two:(NSInteger)two;
 
 @end

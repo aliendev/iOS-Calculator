@@ -20,6 +20,7 @@
     calculatorScreen.enabled = FALSE;
     calculatorScreen.text = @"0";
     calculatorPower.on = TRUE;
+
     numberOne = 0;
     numberTwo = 0;
     stillTypeing = FALSE;
@@ -97,21 +98,15 @@
     // if + was pressed, get value of screen and add it to the variable first number
     if ([function isEqualToString:@"+"])
     {
-
-        numberTwo = [calculatorScreen.text intValue];
-        numberOne = (numberOne + numberTwo);
-        NSString *theAnswerString = [[NSString alloc] initWithFormat:@"%d", numberOne];
-        calculatorScreen.text = [[NSString alloc] initWithString:theAnswerString];
+        // print answer to calculator screen
+        calculatorScreen.text = [self addNumbers:numberOne two:[calculatorScreen.text intValue]];
         stillTypeing = FALSE;
 
     }
     else if ([function isEqualToString:@"="])
     {
-        // if = was pressed add first number to second number and display answer to screen
-        numberTwo = [calculatorScreen.text intValue];
-        numberOne = (numberOne + numberTwo);
-        NSString *theAnswerString = [[NSString alloc] initWithFormat:@"%d", numberOne];
-        calculatorScreen.text = [[NSString alloc] initWithString:theAnswerString];
+        // print answer to calculator screen
+        calculatorScreen.text = [self addNumbers:numberOne two:[calculatorScreen.text intValue]];
         [self clearCalculator];
     }
     else if ([function isEqualToString:@"Clear"])
@@ -183,6 +178,19 @@
     }
 }
 
+
+-(NSString*)addNumbers:(NSInteger)one two:(NSInteger)two
+{
+    // set global variables
+    numberTwo = two;
+    numberOne = (numberOne + numberTwo);
+
+    // convert answer to a string and return it
+    NSString *answerString = [[NSString alloc] initWithFormat:@"%d", numberOne];
+    return answerString;
+}
+
+// clear the calculators memory and reset typing
 -(void)clearCalculator
 {
     numberOne = 0;
