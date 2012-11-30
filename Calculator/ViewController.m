@@ -112,17 +112,13 @@
         numberOne = (numberOne + numberTwo);
         NSString *theAnswerString = [[NSString alloc] initWithFormat:@"%d", numberOne];
         calculatorScreen.text = [[NSString alloc] initWithString:theAnswerString];
-        numberOne = 0;
-        numberTwo = 0;
-        stillTypeing = FALSE;
+        [self clearCalculator];
     }
     else if ([function isEqualToString:@"Clear"])
     {
-        numberOne = 0;
-        numberTwo = 0;
+        [self clearCalculator];
         NSString *theAnswerString = [[NSString alloc] initWithFormat:@"%d", numberOne];
         calculatorScreen.text = [[NSString alloc] initWithString:theAnswerString];
-        stillTypeing = FALSE;        
     }
     
 }
@@ -157,9 +153,7 @@
             {
                 allButtons.enabled = TRUE;
             }
-            numberOne = 0;
-            numberTwo = 0;
-            stillTypeing = FALSE;
+            [self clearCalculator];
             self.view.backgroundColor = [UIColor lightGrayColor];
             calculatorScreen.text = @"0";
         }
@@ -189,5 +183,11 @@
     }
 }
 
+-(void)clearCalculator
+{
+    numberOne = 0;
+    numberTwo = 0;
+    stillTypeing = FALSE;
+}
 
 @end
