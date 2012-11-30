@@ -8,6 +8,11 @@ This calculator is being created for a project assignment that I had during clas
 Michael Youngblood
 
 
+NOTES
+=====
+
+I think my next steps would be to make a custom class or even a factory to build up on the functions of the calculator and give it the ability to add a lot more functionality. Obviously the next easy is subtraction and decimal points and making sure the app can handle negatives and decimals
+
 
 
 RESOURCES
